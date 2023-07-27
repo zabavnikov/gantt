@@ -19,17 +19,6 @@ export default {
 
   mounted: function () {
     gantt.config.grid_resize = true;
-    gantt.config.columns = [
-      {name: "text", label: "Название задачи", tree: true, width: 160, template: function (task) {
-          if (task.priority === 1) {
-            return "<div class='important'>" + task.text + "</div>";
-          }
-          return task.text;
-        }
-      },
-      {name: "start_date", label: "Время начала", align: "center", width: 120},
-      {name: "duration", label: "Продолжительность", align: "center", width: 120}
-    ]
 
     gantt.config.xml_date = "%Y-%m-%d";
     gantt.init(this.$refs.gantt);
