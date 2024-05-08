@@ -6,5 +6,5 @@ export const DATE_UNITS = {
   month: 'day',
 } as const
 
-export const COLUMN_WIDTH = 72
+export const COLUMN_WIDTH = 74
 export const HOURS_OFFSET = COLUMN_WIDTH / 24

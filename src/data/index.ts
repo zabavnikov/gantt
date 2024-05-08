@@ -11,14 +11,16 @@ export default {
   tasks: [
     {
       label: 'Построить дом',
-      from: 'Sun, 12 Jan 2024 03:00:00',
-      to: 'Tue, 22 Jan 2024 16:59:59',
+      start_at: 'Sun, 12 Jan 2024 03:00:00',
+      deadline_at: 'Tue, 22 Jan 2024 16:59:59',
+      completed_at: null,
       tasks: [],
     },
     {
       label: 'Посадить дерево',
-      from: 'Sun, 2 Jan 2024 17:00:00',
-      to: 'Tue, 12 Jan 2024 16:59:59',
+      start_at: 'Sun, 2 Jan 2024 17:00:00',
+      deadline_at: 'Tue, 12 Jan 2024 16:59:59',
+      completed_at: 'Tue, 14 Jan 2024 16:59:59',
       tasks: [],
     },
   ],

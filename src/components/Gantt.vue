@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div class="flex">
-    <aside class="shrink-0 w-80">
+    <aside class="sticky left-0 z-[200] bg-white shrink-0 w-80">
       <header>
         <div class="h-14 bg-neutral-200">1</div>
         <div class="h-8 bg-slate-300">2</div>

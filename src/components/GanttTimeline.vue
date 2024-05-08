@@ -36,9 +36,9 @@ const dateTimeUnit = computed<Dayjs[]>(() => {
 </script>
 
 <template>
-  <div class="flex h-screen">
+  <div class="flex">
     <div v-for="date in dateTimeUnit" class="flex flex-col">
-      <div class="shrink-0 flex items-center h-14 px-4 bg-neutral-100">{{ date.label }}</div>
+      <div class="shrink-0 flex items-center h-14 px-4">{{ date.label }}</div>
       <div class="flex">
         <GanttTimelineColumn
           v-for="date in date.items"

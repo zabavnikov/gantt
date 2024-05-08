@@ -7,11 +7,11 @@ defineProps<{
 <template>
   <div
     style="width: var(--column-width);"
-    class="shrink-0 border-r border-r-slate-400 overflow-hidden"
+    class="shrink-0 border-r border-r-neutral-200/75 overflow-hidden min-h-screen"
   >
-    <div class="flex items-center justify-center h-8 bg-slate-200">{{ heading }}</div>
-    <div class="flex">
-      <div v-for="i in 24" style="flex-shrink: 0; width: calc(72px/24); height: 100vh" :style="{backgroundColor: `${i % 2 === 0 ? '#fff' : '#e9e9e9'}`}"></div>
-    </div>
+    <div class="flex items-center justify-center h-8 bg-neutral-100">{{ heading }}</div>
+<!--    <div class="flex">
+      <div v-for="i in 24" style="flex-shrink: 0; width: calc(var(&#45;&#45;column-width)/24); height: 100vh" :style="{backgroundColor: `${i % 2 === 0 ? '' : '#333'}`}"></div>
+    </div>-->
   </div>
 </template>
