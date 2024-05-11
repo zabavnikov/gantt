@@ -42,7 +42,7 @@
 
 body {
   min-height: 100vh;
-  min-width: fit-content;
+  overflow-x: hidden;
   font-size: theme(fontSize.sm);
   font-weight: 500;
 }

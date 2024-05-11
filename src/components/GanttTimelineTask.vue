@@ -55,22 +55,24 @@ const isOverdue = computed(() => {
 </script>
 
 <template>
-  <article
-    class="my-4 relative"
-    :style="style"
-  >
-    <div class="relative flex items-center p-4 bg-neutral-50 rounded-lg shadow-sm ring-2 ring-inset ring-green-500">
-      <p class="font-medium">{{ task.label }}</p>
-      <button type="button" class="flex items-center justify-center absolute top-0 right-0 bottom-0 aspect-square">
-        <Settings2Icon class="size-5" />
-      </button>
-    </div>
-
-    <div
-      v-if="isOverdue"
-      class="absolute -z-10 left-0 top-0 h-full bg-red-300/50 rounded-lg"
-      :style="{ width: `${completedAt}px`}"
+  <div class="[&:not(:first-child)]:-mt-3 py-3 w-full hover:bg-indigo-200/25">
+    <article
+      class="relative"
+      :style="style"
     >
-    </div>
-  </article>
+      <div class="relative z-10 flex items-center cursor-pointer">
+        <div class="flex-auto flex items-center px-4 h-12 bg-indigo-500 rounded-l-lg">
+          <p class="text-white text-base">{{ task.label }}</p>
+        </div>
+        <div class="h-0 w-0 border-y-[24px] border-y-transparent border-l-[12px] border-l-indigo-500"></div>
+      </div>
+
+      <div
+        v-if="isOverdue"
+        class="absolute left-0 top-0 h-full bg-red-500/25 rounded-lg"
+        :style="{ width: `${completedAt}px`}"
+      >
+      </div>
+    </article>
+  </div>
 </template>

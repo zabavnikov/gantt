@@ -2,10 +2,22 @@
 import GanttTimeline from './GanttTimeline.vue'
 import GanttTimelineTask from './GanttTimelineTask.vue'
 import { type Gantt } from '../types.ts'
+import { ref, watch } from 'vue'
+import { useMouseInElement } from '@vueuse/core'
 
 defineProps<{
   data: Gantt
 }>()
+
+const draggable = ref()
+const selected = ref(false)
+const { elementX, isOutside } = useMouseInElement(draggable)
+
+watch(() => elementX.value, (x) => {
+  if (selected.value) {
+    (draggable.value as HTMLElement).scrollLeft = x
+  }
+})
 </script>
 
 <template>
@@ -16,7 +28,7 @@ defineProps<{
         <div class="h-8 bg-slate-300">2</div>
       </header>
     </aside>
-    <div class="relative">
+    <div class="relative overflow-x-scroll" ref="draggable" @mousedown="selected = true" @mouseup="selected = false">
       <GanttTimeline
         :from="data.timeline.from"
         :to="data.timeline.to"
